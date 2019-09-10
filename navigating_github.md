@@ -1,17 +1,12 @@
-Here is the URL to the STAT 545 homepage repo:
+# Helpful Links
+*****
+[Here](https://github.com/STAT545-UBC/STAT545-home) is the URL to the __STAT 545__ homepage repo.
 
-https://github.com/STAT545-UBC/STAT545-home
-
-Here is its corresponding organization account:
-
-https://github.com/STAT545-UBC
+[Here](https://github.com/STAT545-UBC) is its corresponding _organization_ account.
+*****
 
 *Start new URL edits*
 
-Here is the URL to the Participation repo:
+[Here](https://github.com/arlobrynthorn/STAT545-participation) is the URL to the __Participation__ repo
 
-https://github.com/arlobrynthorn/STAT545-participation
-
-Here is its corresponding user account:
-
-https://github.com/arlobrynthorn 
+[Here](https://github.com/arlobrynthorn) is its corresponding _user_ account:
