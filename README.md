@@ -1,2 +1,2 @@
-# STAT545-participation
+# STAT545 _participation_
 Participation page for STAT545
