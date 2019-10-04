@@ -1,7 +1,9 @@
 ---
-title: "cm009 Exercises: tidy data"
-output: html_notebook
-editor_options: 
+title: 'cm009 Exercises: tidy data'
+output:
+  html_document:
+    df_print: paged
+editor_options:
   chunk_output_type: inline
 ---
 
@@ -26,7 +28,7 @@ Consider the Lord of the Rings data:
 lotr
 ```
 
-1. Would you say this data is in tidy format?
+1. Would you say  this data is in tidy format?
 
 2. Widen the data so that we see the words spoken by each race, by putting race as its own column.
 
@@ -119,9 +121,9 @@ email %>%
 
 ```{r}
 n <- 100
-FILL_THIS_IN(label = FILL_THIS_IN,
-             FILL_THIS_IN = rnorm(n),
-             FILL_THIS_IN)
+tibble(label = "Sample A",
+             x = rnorm(n),
+             y = x + rnorm(n))
 ```
 
 
@@ -147,6 +149,6 @@ experiment <- tibble(
   measurement_1 = runif(6),
   measurement_2 = runif(6)
 )
-experiment %>% expand(name, trt, rep)
+experiment %>% complete(nesting(name, trt), rep)
 ```
 
