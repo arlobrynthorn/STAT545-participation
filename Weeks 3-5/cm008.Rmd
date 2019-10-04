@@ -208,8 +208,8 @@ We're starting with the same plot as above, but instead of the points + boxplot,
 ```{r, fig.width = 5, fig.height = 2}
 gapminder %>% 
   filter(continent == "Americas") %>% 
-  ggplot(aes(country, lifeExp)) + 
-  geom_point() +
+  ggplot(aes(lifeExp, country)) + 
+  ggridges::geom_density_ridges() +
   geom_boxplot()
 ```
 
