@@ -1,0 +1,127 @@
+# Effective Visualizations
+
+Now that you know how to create graphics and visualizations in R, you are armed with powerful tools for scientific computing and analysis. With this power also comes great responsibility. Effective visualizations is an incredibly important aspect of scientific research and communication. There have been several books (see references) written about these principles. In class today we will be going through several case-studies trying to develop some expertise into making effective visualizations. 
+
+## Worksheet
+
+**The worksheet questions for today are embedded into the class notes.**
+
+You can download this Rmd file [here](https://github.com/STAT545-UBC/Classroom/blob/master/cm013.Rmd)
+
+Note, there will be very little coding in-class today, but I've given you plenty of exercises in the form of a supplemental worksheet (linked at the bottom of this page) to practice with after class is over.
+
+## Resources
+
+1. [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/introduction.html) by Claus Wilke.
+
+1. [Visualization Analysis and Design](https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/9780429088902) by Tamara Munzner.
+
+1. [STAT545.com - Effective Graphics](https://stat545.com/effective-graphs.html) by Jenny Bryan.
+
+1. [ggplot2 book](https://ggplot2-book.org) by Hadley Wickam.
+
+1. [Callingbull.org](https://callingbull.org/tools.html) by Carl T. Bergstrom and Jevin West.
+
+## Part 1: Warm-up and pre-test [20 mins]
+
+### Warmup:
+1. Concise & accurate labels
+1. Data point formatting (colour, size etc) helps reader note important components
+1. Axis labels& scales simplify reading
+1. Trend or patterns descernible from data shown
+1. Legend can help simplify trends as well.   
+
+### CQ01: Weekly hours for full-time employees
+
+> Question: Evaluate the strength of the claim based on the data: "German workers are more motivated and work more hours than workers in other EU nations."
+>
+> Very strong, strong, weak, very week, do not know
+
+- <<strong, whatever type of motivation is creating this trend is irrelevant; however the graph doesn't show population size or any measure of error. Additionally, the x-axis scale biases the data toward observation of a very small trend.>>
+
+- Main takeaway: Summarize the main takeaway from this question/discussion here
+
+### CQ02: Average Global Temperature by year
+
+> Question: For the years this temperature data is displayed, is there an appreciable increase in temperature?
+> 
+> Yes, No, Do not know
+
+- <<Yes, trend is positive. Axes (scales, labels) does not demonstrate this well>>
+
+- Main takeaway: interpret,Summarize the main takeaway from this question/discussion here
+
+### CQ03: Gun deaths in Florida
+
+> Question: Evaluate the strength of the claim based on the data: “Soon after this legislation was passed, gun deaths sharply declined."
+>
+> Very strong, strong, weak, very week, do not know
+
+- <<Shows the opposite trend can be observed. The y axis was deceptive.>>
+
+- Main takeaway: Summarize the main takeaway from this question/discussion here
+
+## Part 2: Extracting insight from visualizations  [20 mins]
+
+Great resource for selecting the right plot: https://www.data-to-viz.com/ ; encourage you all to consult it when choosing to visualize data.
+
+### Case Study 1: Context matters
+
+### Case Study 2: A case for pie charts
+
+## Part 3: Principles of effective visualizations [20 mins]
+
+We will be filling these principles in together as a class
+
+1. 
+1. 
+1. 
+1. 
+1. 
+
+### Make a great plot worse
+
+Instructions: Here is a code chunk that shows an effective visualization. First, copy this code chunk into a new cell. Then, modify it to purposely make this chart "bad" by breaking the principles of effective visualization above. Your final chart still needs to run/compile and it should still produce a plot. 
+
+How many of the principles did you manage to break?
+
+## Plotly demo [10 mins]
+
+Did you know that you can make interactive graphs and plots in R using the plotly library? We will show you a demo of what plotly is and why it's useful, and then you can try converting a static ggplot graph into an interactive plotly graph.
+
+This is a preview of what we'll be doing in STAT 547 - making dynamic and interactive dashboards using R!
+
+## Supplemental worksheet (Optional)
+
+You are highly encouraged to the cm013 supplemental exercises worksheet. It is a great guide that will take you through Scales, Colours, and Themes in ggplot. There is also a short guided activity showing you how to make a ggplot interactive using plotly.
+
+- [Supplemental Rmd file here](https://github.com/STAT545-UBC/Classroom/blob/master/tutorials/cm013-supplemental.Rmd)
+
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(gapminder)
+```
+
+
+```{r}
+p <- ggplot(gapminder, aes(x=gdpPercap, y= lifeExp, colour = continent)) +
+  geom_point()
+
+#make interactive
+p%>% 
+  ggplotly()
+
+#plot_ly syntax
+gapminder %>%
+  plot_ly(x = ~gdpPercap,
+          y= ~lifeExp,
+          colour = ~continent,
+          type = "scatter", 
+          mode = "markers")
+
+
+
+```
+
